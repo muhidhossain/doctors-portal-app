@@ -1,0 +1,55 @@
+.appointmentType{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+}
+.appointmentType h5{
+    font-weight: 700;
+    background: -webkit-linear-gradient(45deg, #19D3AE, #0FCFEC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.appointmentType p{
+    color: black !important;
+    font-weight: 700;
+}
+.appointmentType small{
+    color: gray;
+}
+.appointmentType button{
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    background-image: linear-gradient(to right, #19D3AE, #0FCFEC);
+    color: white;
+    font-weight: 700;
+    border-radius: 2px;
+}
+.popupDetails{
+    padding: 40px;
+}
+.popupDetails h5{
+    margin-bottom: 30px;
+}
+.popupDetails .takeInput{
+    padding: 10px;
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    outline: none;
+}
+.popupDetails .submitBtn{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 55px;
+}
+.popupDetails .submitBtn > *{
+    padding: 5px 30px;
+    background-image: linear-gradient(to right, #19D3AE, #0FCFEC);
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+}

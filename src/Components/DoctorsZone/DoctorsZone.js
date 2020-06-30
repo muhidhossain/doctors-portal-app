@@ -1,0 +1,139 @@
+import React, { useEffect } from 'react';
+import './DoctorsZone.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTh, faCalendarDay, faUserFriends, faFileAlt, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import FullHeight from "react-full-height";
+import Calendar from 'react-calendar';
+import { useState } from 'react';
+import 'react-calendar/dist/Calendar.css';
+import { TableContainer, Paper, Table, makeStyles, TableHead, TableRow, TableCell, TableBody, Select, MenuItem } from '@material-ui/core'
+import { Link } from 'react-router-dom';
+
+const useStyles = makeStyles({
+    table: {
+        minWidth: 500,
+    },
+});
+
+const DoctorsZone = () => {
+    const [initialDate, setInitialDate] = useState(new Date());
+    const [appointment, setAppointment] = useState([]);
+    const [key, setKey] = useState([]);
+    const [action, setAction] = useState([])
+    const classes = useStyles();
+    const day = initialDate.getDate();
+    const month = initialDate.getMonth();
+    const year = initialDate.getFullYear();
+    const fullDate = month + 1 + "/" + day + "/" + year;
+
+    const handleChange = (event) => {
+        setAction(event.target.value);
+        const actions = { action: action, key };
+        fetch("https://guarded-anchorage-08361.herokuapp.com/modifyAppointmentByKey", {
+            method: "post",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(actions)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+    }
+
+    useEffect(() => {
+        fetch("https://guarded-anchorage-08361.herokuapp.com/appointment")
+            .then(res => res.json())
+            .then(data => {
+                setAppointment(data);
+            })
+    }, []);
+
+    const selectedDateAppointment = appointment.filter(appointment => appointment.details.date === fullDate)
+    console.log(selectedDateAppointment);
+
+    return (
+        <div className="doctorsZone">
+            <FullHeight className="section-styles zoneSideBar">
+                <Link to="/dashboard" style={{ textDecoration: "none" }} className="sideBarLink">
+                    <FontAwesomeIcon className="icon" icon={faTh} />
+                    <p>Dashboard</p>
+                </Link>
+                <Link to="/doctorsZone" style={{ textDecoration: "none" }} className="sideBarLink">
+                    <FontAwesomeIcon className="icon" icon={faCalendarDay} />
+                    <p>Appointment</p>
+                </Link>
+                <Link style={{ textDecoration: "none" }} className="sideBarLink">
+                    <FontAwesomeIcon className="icon" icon={faUserFriends} />
+                    <p>Patients</p>
+                </Link>
+                <Link style={{ textDecoration: "none" }} className="sideBarLink">
+                    <FontAwesomeIcon className="icon" icon={faFileAlt} />
+                    <p>Prescription</p>
+                </Link>
+                <Link style={{ textDecoration: "none" }} className="sideBarLink">
+                    <FontAwesomeIcon className="icon" icon={faCog} />
+                    <p>Settings</p>
+                </Link>
+                <Link style={{ textDecoration: "none" }} className="sideBarLink">
+                    <FontAwesomeIcon className="icon" icon={faSignOutAlt} />
+                    <p>Log Out</p>
+                </Link>
+            </FullHeight>
+            <div className="zoneAppointment">
+                <div>
+                    <h4>Appointment</h4>
+                    <Calendar
+                        className="calender"
+                        selected={initialDate}
+                        onChange={date => setInitialDate(date)}
+                    >
+                    </Calendar>
+                </div>
+                <div className="appointmentTable">
+                    <div className="tableHeading">
+                        <p>Appointment</p>
+                        <p>{fullDate}</p>
+                    </div>
+                    <TableContainer component={Paper}>
+                        <Table className={classes.table} aria-label="simple table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell align="left">Name</TableCell>
+                                    <TableCell align="center">Schedule</TableCell>
+                                    <TableCell align="right">Action</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {
+                                    selectedDateAppointment.map((appointment) => (
+                                        <TableRow key={appointment._id}>
+                                            <TableCell component="th" scope="row" align="left">
+                                                {appointment.details.name}
+                                            </TableCell>
+                                            <TableCell align="center">{appointment.details.time}</TableCell>
+                                            <TableCell onClick={() => setKey(appointment.key)} align="right">
+                                                <Select
+                                                    style={{ color: "white" }}
+                                                    className="actionSelect"
+                                                    value={appointment.action}
+                                                    onChange={handleChange}
+                                                >
+                                                    <MenuItem value={"notVisited"}>Not Visited</MenuItem>
+                                                    <MenuItem value={"visited"}>Visited</MenuItem>
+                                                </Select>
+                                            </TableCell>
+                                        </TableRow>
+                                    ))
+                                }
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default DoctorsZone;

@@ -1,0 +1,82 @@
+.doctorsZone{
+    display: flex;
+    background-color: #e1f1f3;
+}
+.zoneSideBar{
+    padding-top: 100px;
+    background-image: linear-gradient(#19D3AE, #0FCFEC);
+    width: 250px;
+}
+.zoneSideBar > .sideBarLink{
+    display: flex;
+    color: white;
+    font-weight: 700;
+    padding: 5px 0px;
+    align-items: center;
+}
+.zoneSideBar > .sideBarLink:last-child{
+    margin-top: 200px;
+}
+.zoneSideBar > .sideBarLink *:first-child{
+    margin-left: 60px;
+}
+.zoneSideBar > .sideBarLink *:last-child{
+    padding-top: 20px;
+}
+.zoneSideBar > .sideBarLink:hover{
+    box-shadow: 5px 5px 10px lightseagreen;
+}
+.zoneSideBar .icon{
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.zoneAppointment{
+    display: flex;
+}
+.zoneAppointment h4{
+    padding-top: 20px;
+    padding-left: 40px;
+}
+.zoneAppointment .calender{
+    margin-top: 50px;
+    margin-left: 40px;
+    width: 500px;
+    height: 600px;
+    font-size: 20px;
+    padding: 0px 5px;
+    padding-top: 80px;
+    border: none;
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 4px;
+}
+.react-calendar__month-view__weekdays{
+    margin-top: 40px;
+}
+.appointmentTable{
+    margin-top: 100px;
+    margin-left: 40px;
+    box-shadow: 5px 5px 10px gray;
+    height: 600px;
+    background-color: white;
+    border-radius: 4px;
+}
+.appointmentTable .tableHeading{
+    display: flex;
+    justify-content: space-between;
+}
+.appointmentTable p:first-child{
+    padding: 20px;
+    font-weight: 900;
+    background: -webkit-linear-gradient(45deg, #19D3AE, #0FCFEC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.appointmentTable p:last-child{
+    padding: 20px;
+    color: gray;
+}
+.appointmentTable .actionSelect{
+    background-image: linear-gradient(#19D3AE, #0FCFEC);
+    padding: 0px 5px;
+    border-radius: 4px;
+}

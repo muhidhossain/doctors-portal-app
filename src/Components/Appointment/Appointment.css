@@ -1,0 +1,29 @@
+.appointmentText{
+    margin-left: 150px;
+    font-weight: 700;
+}
+.appointmentText h1{
+    margin-bottom: 20px;
+}
+.mainBody{
+    margin-top: 80px;
+}
+.appointmentText .calender{
+    background-color: white;
+    padding: 50px 10px;
+    box-shadow: 5px 5px 10px gray;
+    height: 500px;
+    width: 500px;
+    font-size: 18px;
+    border: none;
+}
+.appointmentDetails{
+    padding-top: 50px;
+    text-align: center;
+}
+.appointmentDetails h3{
+    font-weight: 700;
+    background: -webkit-linear-gradient(45deg, #19D3AE, #0FCFEC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
