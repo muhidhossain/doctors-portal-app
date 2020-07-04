@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react';
 import './DoctorsZone.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTh, faCalendarDay, faUserFriends, faFileAlt, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import FullHeight from "react-full-height";
 import Calendar from 'react-calendar';
 import { useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { TableContainer, Paper, Table, makeStyles, TableHead, TableRow, TableCell, TableBody, Select, MenuItem } from '@material-ui/core'
-import { Link } from 'react-router-dom';
+import Sidebar from '../Sidebar/Sidebar';
 
 const useStyles = makeStyles({
     table: {
@@ -19,7 +16,7 @@ const DoctorsZone = () => {
     const [initialDate, setInitialDate] = useState(new Date());
     const [appointment, setAppointment] = useState([]);
     const [key, setKey] = useState([]);
-    const [action, setAction] = useState([])
+    const [action, setAction] = useState([]);
     const classes = useStyles();
     const day = initialDate.getDate();
     const month = initialDate.getMonth();
@@ -50,37 +47,11 @@ const DoctorsZone = () => {
             })
     }, []);
 
-    const selectedDateAppointment = appointment.filter(appointment => appointment.details.date === fullDate)
-    console.log(selectedDateAppointment);
+    const selectedDateAppointment = appointment.filter(appointment => appointment.details.date === fullDate);
 
     return (
         <div className="doctorsZone">
-            <FullHeight className="section-styles zoneSideBar">
-                <Link to="/dashboard" style={{ textDecoration: "none" }} className="sideBarLink">
-                    <FontAwesomeIcon className="icon" icon={faTh} />
-                    <p>Dashboard</p>
-                </Link>
-                <Link to="/doctorsZone" style={{ textDecoration: "none" }} className="sideBarLink">
-                    <FontAwesomeIcon className="icon" icon={faCalendarDay} />
-                    <p>Appointment</p>
-                </Link>
-                <Link style={{ textDecoration: "none" }} className="sideBarLink">
-                    <FontAwesomeIcon className="icon" icon={faUserFriends} />
-                    <p>Patients</p>
-                </Link>
-                <Link style={{ textDecoration: "none" }} className="sideBarLink">
-                    <FontAwesomeIcon className="icon" icon={faFileAlt} />
-                    <p>Prescription</p>
-                </Link>
-                <Link style={{ textDecoration: "none" }} className="sideBarLink">
-                    <FontAwesomeIcon className="icon" icon={faCog} />
-                    <p>Settings</p>
-                </Link>
-                <Link style={{ textDecoration: "none" }} className="sideBarLink">
-                    <FontAwesomeIcon className="icon" icon={faSignOutAlt} />
-                    <p>Log Out</p>
-                </Link>
-            </FullHeight>
+            <Sidebar></Sidebar>
             <div className="zoneAppointment">
                 <div>
                     <h4>Appointment</h4>
@@ -91,46 +62,52 @@ const DoctorsZone = () => {
                     >
                     </Calendar>
                 </div>
-                <div className="appointmentTable">
-                    <div className="tableHeading">
-                        <p>Appointment</p>
-                        <p>{fullDate}</p>
-                    </div>
-                    <TableContainer component={Paper}>
-                        <Table className={classes.table} aria-label="simple table">
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell align="left">Name</TableCell>
-                                    <TableCell align="center">Schedule</TableCell>
-                                    <TableCell align="right">Action</TableCell>
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {
-                                    selectedDateAppointment.map((appointment) => (
-                                        <TableRow key={appointment._id}>
-                                            <TableCell component="th" scope="row" align="left">
-                                                {appointment.details.name}
-                                            </TableCell>
-                                            <TableCell align="center">{appointment.details.time}</TableCell>
-                                            <TableCell onClick={() => setKey(appointment.key)} align="right">
-                                                <Select
-                                                    style={{ color: "white" }}
-                                                    className="actionSelect"
-                                                    value={appointment.action}
-                                                    onChange={handleChange}
-                                                >
-                                                    <MenuItem value={"notVisited"}>Not Visited</MenuItem>
-                                                    <MenuItem value={"visited"}>Visited</MenuItem>
-                                                </Select>
-                                            </TableCell>
+                {
+                    appointment[0] ?
+                        <div className="appointmentTable">
+                            <div className="tableHeading">
+                                <p>Appointment</p>
+                                <p>{fullDate}</p>
+                            </div>
+                            <TableContainer component={Paper}>
+                                <Table className={classes.table} aria-label="simple table">
+                                    <TableHead>
+                                        <TableRow>
+                                            <TableCell align="left">Name</TableCell>
+                                            <TableCell align="center">Schedule</TableCell>
+                                            <TableCell align="right">Action</TableCell>
                                         </TableRow>
-                                    ))
-                                }
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
-                </div>
+                                    </TableHead>
+                                    <TableBody>
+                                        {
+                                            selectedDateAppointment.map((appointment) => (
+                                                <TableRow key={appointment._id}>
+                                                    <TableCell align="left">
+                                                        {appointment.details.name}
+                                                    </TableCell>
+                                                    <TableCell align="center">{appointment.details.time}</TableCell>
+                                                    <TableCell onClick={() => setKey(appointment.key)} align="right">
+                                                        <Select
+                                                            style={{ color: "white" }}
+                                                            className="actionSelect"
+                                                            value={appointment.action}
+                                                            onChange={handleChange}
+                                                        >
+                                                            <MenuItem value={"notVisited"}>Not Visited</MenuItem>
+                                                            <MenuItem value={"visited"}>Visited</MenuItem>
+                                                        </Select>
+                                                    </TableCell>
+                                                </TableRow>
+                                            ))
+                                        }
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                        </div> :
+                        <div style={{margin:"400px 200px"}} className="spinner-border text-success" role="status">
+                            <span className="sr-only">Loading...</span>
+                        </div>
+                }
             </div>
         </div>
     );

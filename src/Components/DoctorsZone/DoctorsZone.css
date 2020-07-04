@@ -2,34 +2,6 @@
     display: flex;
     background-color: #e1f1f3;
 }
-.zoneSideBar{
-    padding-top: 100px;
-    background-image: linear-gradient(#19D3AE, #0FCFEC);
-    width: 250px;
-}
-.zoneSideBar > .sideBarLink{
-    display: flex;
-    color: white;
-    font-weight: 700;
-    padding: 5px 0px;
-    align-items: center;
-}
-.zoneSideBar > .sideBarLink:last-child{
-    margin-top: 200px;
-}
-.zoneSideBar > .sideBarLink *:first-child{
-    margin-left: 60px;
-}
-.zoneSideBar > .sideBarLink *:last-child{
-    padding-top: 20px;
-}
-.zoneSideBar > .sideBarLink:hover{
-    box-shadow: 5px 5px 10px lightseagreen;
-}
-.zoneSideBar .icon{
-    margin-top: 5px;
-    margin-right: 10px;
-}
 .zoneAppointment{
     display: flex;
 }

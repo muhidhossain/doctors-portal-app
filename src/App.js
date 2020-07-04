@@ -11,6 +11,7 @@ import Appointment from './Components/Appointment/Appointment';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DoctorsZone from './Components/DoctorsZone/DoctorsZone';
 import Dashboard from './Components/Dashboard/Dashboard';
+import Patients from './Components/Patients/Patients';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path="/dashboard">
             <Dashboard></Dashboard>
+          </Route>
+          <Route path="/patients">
+            <Patients></Patients>
           </Route>
         </Switch>
       </Router>

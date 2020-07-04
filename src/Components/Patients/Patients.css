@@ -1,0 +1,20 @@
+.patients{
+    background-color: #e1f1f3;
+    display: flex;
+}
+.patientsTable h4{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.patientsTableDetails{
+    background-color: white;
+    margin-top: 60px;
+    margin-left: 40px;
+}
+.patientsTableDetails p{
+    padding: 20px;
+    font-weight: 900;
+    background: linear-gradient(#19D3AE, #0FCFEC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

@@ -22,7 +22,7 @@ const MainPage = () => {
                         <Nav.Link className="navLink" href="/reviews">Reviews</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className="navLink" href="/doctorsZone">Doctors Zone</Nav.Link>
+                        <Nav.Link className="navLink" href="/dashboard">Doctors Zone</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link className="navLink" href="/contactUs">Contact Us</Nav.Link>
