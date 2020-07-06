@@ -18,7 +18,6 @@
     padding: 0px 5px;
     padding-top: 80px;
     border: none;
-    box-shadow: 5px 5px 10px gray;
     border-radius: 4px;
 }
 .react-calendar__month-view__weekdays{
@@ -27,7 +26,6 @@
 .appointmentTable{
     margin-top: 100px;
     margin-left: 40px;
-    box-shadow: 5px 5px 10px gray;
     height: 600px;
     background-color: white;
     border-radius: 4px;

@@ -1,18 +1,18 @@
-.patients{
+.prescription{
     background-color: #e1f1f3;
     display: flex;
 }
-.patientsTable h4{
+.prescriptionTable h4{
     margin-top: 20px;
     margin-left: 40px;
 }
-.patientsTableDetails{
+.prescriptionTableDetails{
     background-color: white;
     margin-top: 60px;
     margin-left: 40px;
     border-radius: 5px;
 }
-.patientsTableDetails p{
+.prescriptionTableDetails p{
     padding: 20px;
     font-weight: 900;
     background: linear-gradient(#19D3AE, #0FCFEC);

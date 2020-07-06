@@ -1,9 +1,9 @@
 import React from 'react';
-import './Patients.css';
+import './Prescription.css';
 import Sidebar from '../Sidebar/Sidebar';
-import { TableContainer, Paper, Table, makeStyles, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
-import { useEffect } from 'react';
+import { TableContainer, Paper, makeStyles, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 const useStyle = makeStyles({
     table: {
@@ -11,9 +11,10 @@ const useStyle = makeStyles({
     }
 });
 
-const Patients = () => {
+const Prescription = () => {
     const classes = useStyle();
     const [appointment, setAppointment] = useState([]);
+    console.log(appointment);
 
     useEffect(() => {
         fetch("https://guarded-anchorage-08361.herokuapp.com/appointment")
@@ -24,25 +25,23 @@ const Patients = () => {
     }, []);
 
     return (
-        <div className="patients">
+        <div className="prescription">
             <Sidebar></Sidebar>
             {
                 appointment[0] ?
-                    <div className="patientsTable">
-                        <h4>Patients</h4>
-                        <div className="patientsTableDetails">
-                            <p>All Patients</p>
+                    <div className="prescriptionTable">
+                        <h4>Prescription</h4>
+                        <div className="prescriptionTableDetails">
+                            <p>All Prescription</p>
                             <TableContainer component={Paper}>
                                 <Table className={classes.table} aria-label="simple table">
                                     <TableHead>
                                         <TableRow>
                                             <TableCell align="left">Sr. No</TableCell>
+                                            <TableCell align="left">Date</TableCell>
                                             <TableCell align="left">Name</TableCell>
-                                            <TableCell align="left">Gender</TableCell>
-                                            <TableCell align="left">Age</TableCell>
-                                            <TableCell align="left">Weight</TableCell>
                                             <TableCell align="left">Contact</TableCell>
-                                            <TableCell align="left">Address</TableCell>
+                                            <TableCell align="center">Prescription</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
@@ -50,12 +49,10 @@ const Patients = () => {
                                             appointment.map((appoint) => (
                                                 <TableRow key={appoint._id}>
                                                     <TableCell align="left">{appointment.indexOf(appoint) + 1}</TableCell>
+                                                    <TableCell align="left">{appoint.details.date}</TableCell>
                                                     <TableCell align="left">{appoint.details.name}</TableCell>
-                                                    <TableCell align="left">Male</TableCell>
-                                                    <TableCell align="left">25</TableCell>
-                                                    <TableCell align="left">70</TableCell>
                                                     <TableCell align="left">{appoint.details.phoneNumber}</TableCell>
-                                                    <TableCell align="left">College Avenue, Barisal</TableCell>
+                                                    <TableCell align="center">View</TableCell>
                                                 </TableRow>
                                             ))
                                         }
@@ -77,4 +74,4 @@ const Patients = () => {
     );
 };
 
-export default Patients;
+export default Prescription;

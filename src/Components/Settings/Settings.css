@@ -1,0 +1,7 @@
+.settings{
+    background-color: #e1f1f3;
+    display: flex;
+}
+.settings h1{
+    margin: 300px;
+}

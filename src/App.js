@@ -12,6 +12,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import DoctorsZone from './Components/DoctorsZone/DoctorsZone';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Patients from './Components/Patients/Patients';
+import Prescription from './Components/Prescription/Prescription';
+import Settings from './Components/Settings/Settings';
+import NotFound from './Components/NotFound/NotFound';
 
 function App() {
   return (
@@ -32,6 +35,15 @@ function App() {
           </Route>
           <Route path="/patients">
             <Patients></Patients>
+          </Route>
+          <Route path="/prescription">
+            <Prescription></Prescription>
+          </Route>
+          <Route path="/settings">
+            <Settings></Settings>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
           </Route>
         </Switch>
       </Router>
