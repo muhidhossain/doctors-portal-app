@@ -19,7 +19,8 @@ const Patients = () => {
         fetch("https://guarded-anchorage-08361.herokuapp.com/appointment")
             .then(res => res.json())
             .then(data => {
-                setAppointment(data)
+                const fetchedData = data.reverse();
+                setAppointment(fetchedData);
             });
     }, []);
 

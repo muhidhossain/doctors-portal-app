@@ -21,13 +21,13 @@ const Dashboard = () => {
     const year = todaysDate.getFullYear();
     const fullTodaysDate = month + 1 + "/" + day + "/" + year;
     const selectedDateAppointment = appointment.filter(appointment => appointment.details.date === fullTodaysDate);
-    console.log(appointment);
 
     useEffect(() => {
         fetch("https://guarded-anchorage-08361.herokuapp.com/appointment")
             .then(res => res.json())
             .then(data => {
-                setAppointment(data);
+                const fetchedData = data.reverse()
+                setAppointment(fetchedData);
             });
     }, []);
 
