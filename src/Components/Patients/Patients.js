@@ -65,7 +65,7 @@ const Patients = () => {
                             </TableContainer>
                         </div>
                     </div> :
-                    <div style={{ margin: "350px 550px" }}>
+                    <div style={{ margin: "350px 550px", display: "flex" }}>
                         <div className="spinner-grow text-info" role="status">
                             <span className="sr-only">Loading...</span>
                         </div>

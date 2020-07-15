@@ -16,6 +16,7 @@ import bgRemoveDoctor from '../../images/5790-removebg.png';
 const MainPage = () => {
     return (
         <div className="doctorPortal">
+            <div className="doctorHeading">
             <div className="doctorNav">
                 <Nav className="justify-content-end">
                     <Nav.Item>
@@ -28,13 +29,13 @@ const MainPage = () => {
                         <Nav.Link className="navLink" href="/dentalServices">Dental Services</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className="navLink" href="/reviews">Reviews</Nav.Link>
+                        <Nav.Link className="navLink2" href="/reviews">Reviews</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className="navLink" href="/dashboard">Doctors Zone</Nav.Link>
+                        <Nav.Link className="navLink2" href="/dashboard">Doctors Zone</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className="navLink" href="/contactUs">Contact Us</Nav.Link>
+                        <Nav.Link className="navLink2" href="/contactUs">Contact Us</Nav.Link>
                     </Nav.Item>
                 </Nav>
             </div>
@@ -55,6 +56,7 @@ const MainPage = () => {
                         <img src={image} alt="" />
                     </div>
                 </div>
+            </div>
             </div>
             <div className="publicServices">
                 <div>

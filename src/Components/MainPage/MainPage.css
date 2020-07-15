@@ -4,9 +4,14 @@
     font-weight: 700;
 }
 .navLink{
-    padding: 0px 40px;
+    padding: 0px 30px;
     text-decoration: none;
     color: gray;
+}
+.navLink2{
+    padding: 0px 30px;
+    text-decoration: none;
+    color: white;
 }
 .doctorText{
     margin-top: 80px;
@@ -16,11 +21,13 @@
 .doctorText p{
     color: gray;
 }
-.doctorPortal{
-    background-image: url(../../images/header.png);
+.doctorHeading{
+    background: gray 40%;
+    background-image: linear-gradient(to left,  #1b1b1b 33%, #ffffffd5 33%), url(../../images/Mask\ Group\ 1.png);
     width: 100%;
-    height: 750px;
+    height: 800px;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .doctorImg img{
     width: 80%;
@@ -42,7 +49,7 @@
 .doctorPortal .publicServices{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: -80px;
 }
 .doctorPortal .publicServices > *{
     display: flex;
