@@ -2,6 +2,7 @@
     padding-top: 60px;
     background-image: linear-gradient(#19D3AE, #0FCFEC);
     width: 250px;
+    position: fixed;
 }
 .sidebar > .sideBarLink{
     display: flex;

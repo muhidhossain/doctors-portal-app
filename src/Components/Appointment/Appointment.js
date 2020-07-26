@@ -6,6 +6,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import appointmentData from '../../data/AppointmentData'
 import AppointmentType from '../AppointmentType/AppointmentType';
+import Footer from '../Footer/Footer';
 
 const Appointment = () => {
     const [startDate, setStartDate] = useState(new Date());
@@ -18,47 +19,49 @@ const Appointment = () => {
     const fullDate1 = month1 + 1 + "/" + day + "/" + year;
 
     return (
-        <div className="doctorPortal">
-            <div className="doctorNav">
-                <Nav className="justify-content-end">
-                    <Nav.Item>
-                        <Nav.Link className="navLink" href="/home">Home</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link className="navLink" href="/about">About</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link className="navLink" href="/dentalServices">Dental Services</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link className="navLink" href="/reviews">Reviews</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link className="navLink" href="/dashboard">Doctors Zone</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link className="navLink" href="/contactUs">Contact Us</Nav.Link>
-                    </Nav.Item>
-                </Nav>
-            </div>
-            <div className='row mainBody'>
-                <div className="col-md-5">
-                    <div className="appointmentText">
-                        <h1>Appointment</h1>
-                        <div>
+        <div className="appointmentInfo">
+            <div className="patientAppointment">
+                <div className="doctorNav">
+                    <Nav className="justify-content-end">
+                        <Nav.Item>
+                            <Nav.Link className="navLink" href="/">Home</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link className="navLink" href="/about">About</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link className="navLink" href="/dentalServices">Dental Services</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link className="navLink" href="/reviews">Reviews</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link className="navLink" href="/dashboard">Doctors Zone</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link className="navLink" href="/contactUs">Contact Us</Nav.Link>
+                        </Nav.Item>
+                    </Nav>
+                </div>
+                <div className='row mainBody'>
+                    <div className="col-md-5">
+                        <div className="appointmentText">
+                            <h1>Appointment</h1>
                             <div>
-                                <Calendar
-                                    className="calender"
-                                    selected={startDate}
-                                    onChange={date => setStartDate(date)}
-                                />
+                                <div>
+                                    <Calendar
+                                        className="calender"
+                                        selected={startDate}
+                                        onChange={date => setStartDate(date)}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="col-md-7">
-                    <div className="doctorImg">
-                        <img src={image} alt="" />
+                    <div className="col-md-7">
+                        <div className="doctorImg">
+                            <img src={image} alt="" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,6 +79,7 @@ const Appointment = () => {
                     }
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

@@ -2,6 +2,9 @@
     background-color: #e1f1f3;
     display: flex;
 }
+.prescriptionTable{
+    margin-left: 240px;
+}
 .prescriptionTable h4{
     margin-top: 20px;
     margin-left: 40px;

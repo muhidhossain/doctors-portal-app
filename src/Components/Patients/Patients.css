@@ -2,6 +2,9 @@
     background-color: #e1f1f3;
     display: flex;
 }
+.patientsTable{
+    margin-left: 240px;
+}
 .patientsTable h4{
     margin-top: 20px;
     margin-left: 40px;

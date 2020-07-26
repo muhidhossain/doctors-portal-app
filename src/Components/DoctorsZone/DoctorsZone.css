@@ -4,6 +4,7 @@
 }
 .zoneAppointment{
     display: flex;
+    margin-left: 240px;
 }
 .zoneAppointment h4{
     padding-top: 20px;

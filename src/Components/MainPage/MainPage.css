@@ -8,11 +8,6 @@
     text-decoration: none;
     color: gray;
 }
-.navLink2{
-    padding: 0px 30px;
-    text-decoration: none;
-    color: white;
-}
 .doctorText{
     margin-top: 80px;
     margin-left: 100px;
@@ -146,4 +141,108 @@
 }
 .doctorPortal .makeAppointment p{
     margin-bottom: 30px;
+}
+.testimonial{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.testimonial .testimonialDetails{
+    display: flex;
+}
+.testimonial .testimonialDetails > *{
+    margin: 30px;
+}
+.testimonial h4,
+.ourBlog h4,
+.ourDoctors h4,
+.contactUs h4{
+    margin-bottom: 30px;
+    background: linear-gradient(#19D3AE, #0FCFEC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+.testimonial .testimonialDetails img,
+.ourBlog .ourBlogDetails img{
+    height: 50px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.testimonial .patientinfo > p:first-child,
+.ourBlog .doctorinfo > p:first-child,
+.ourDoctors .doctorsInfo > p:first-child{
+    background: linear-gradient(#19D3AE, #0FCFEC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    margin-bottom: -5px;
+}
+.ourBlog,
+.ourDoctors{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.ourBlog .ourBlogDetails,
+.ourDoctors .ourDoctorsDetails{
+    display: flex;
+}
+.ourBlog .ourBlogDetails > *,
+.ourDoctors .ourDoctorsDetails > *{
+    margin: 30px;
+}
+.ourBlog h4,
+.ourBlog h1,
+.ourDoctors h4,
+.contactUs h1,
+.contactUs h4{
+    text-align: center;
+}
+.ourBlog .ourBlogDetails > *:first-child{
+    background: linear-gradient(to right, #19D3AE, #0FCFEC);
+    color: white;
+}
+.ourDoctors .doctorsInfo{
+    text-align: center;
+    margin-top: 5px;
+}
+.contactUs{
+    background-image: url(../../images/Mask\ Group\ 4.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
+    padding: 60px 0;
+}
+.contactUs .contactUsDetails{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.contactUs .contactUsDetails input:first-child,
+.contactUs .contactUsDetails input:nth-child(3){
+    width: 800px;
+    padding: 20px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    margin-top: 10px;
+}
+.contactUs .contactUsDetails input:nth-child(5){
+    width: 800px;
+    padding: 20px;
+    padding-bottom: 150px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    margin-top: 10px;
+}
+.contactUs .contactUsDetails .submitBtn{
+    background: linear-gradient(to right, #19D3AE, #0FCFEC);
+    margin-top: 10px;
+    font-weight: 700;
+    color: white;
+    padding: 10px 50px;
+    border-radius: 4px;
+    outline: none;
 }

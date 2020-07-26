@@ -5,6 +5,7 @@ import { useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { TableContainer, Paper, Table, makeStyles, TableHead, TableRow, TableCell, TableBody, Select, MenuItem } from '@material-ui/core'
 import Sidebar from '../Sidebar/Sidebar';
+import FullHeight from "react-full-height";
 
 const useStyles = makeStyles({
     table: {
@@ -15,8 +16,8 @@ const useStyles = makeStyles({
 const DoctorsZone = () => {
     const [initialDate, setInitialDate] = useState(new Date());
     const [appointment, setAppointment] = useState([]);
-    const [key, setKey] = useState([]);
-    const [action, setAction] = useState([]);
+    const [key, setKey] = useState(null);
+    const [action, setAction] = useState(null);
     const classes = useStyles();
     const day = initialDate.getDate();
     const month = initialDate.getMonth();
@@ -24,9 +25,9 @@ const DoctorsZone = () => {
     const fullDate = month + 1 + "/" + day + "/" + year;
 
     const handleChange = (event) => {
-        setAction(event.target.value);
+        let action = event.target.value;
         const actions = { action: action, key };
-        fetch("https://guarded-anchorage-08361.herokuapp.com/modifyAppointmentByKey", {
+        fetch("https://guarded-anchorage-08361.herokuapp.com/modifyActionByKey", {
             method: "post",
             headers: {
                 "Content-type": "application/json"
@@ -35,6 +36,7 @@ const DoctorsZone = () => {
         })
             .then(response => response.json())
             .then(data => {
+                setAction(data);
                 console.log(data);
             })
     }
@@ -46,7 +48,7 @@ const DoctorsZone = () => {
                 const fetchedData = data.reverse();
                 setAppointment(fetchedData);
             })
-    }, []);
+    }, [action]);
 
     const selectedDateAppointment = appointment.filter(appointment => appointment.details.date === fullDate);
 
@@ -65,47 +67,49 @@ const DoctorsZone = () => {
                 </div>
                 {
                     appointment[0] ?
-                        <div className="appointmentTable">
-                            <div className="tableHeading">
-                                <p>Appointment</p>
-                                <p>{fullDate}</p>
+                        <FullHeight>
+                            <div className="appointmentTable">
+                                <div className="tableHeading">
+                                    <p>Appointment</p>
+                                    <p>{fullDate}</p>
+                                </div>
+                                <TableContainer component={Paper}>
+                                    <Table className={classes.table} aria-label="simple table">
+                                        <TableHead>
+                                            <TableRow>
+                                                <TableCell align="left">Name</TableCell>
+                                                <TableCell align="center">Schedule</TableCell>
+                                                <TableCell align="right">Action</TableCell>
+                                            </TableRow>
+                                        </TableHead>
+                                        <TableBody>
+                                            {
+                                                selectedDateAppointment.map((appointment) => (
+                                                    <TableRow key={appointment._id}>
+                                                        <TableCell align="left">
+                                                            {appointment.details.name}
+                                                        </TableCell>
+                                                        <TableCell align="center">{appointment.details.time}</TableCell>
+                                                        <TableCell onMouseOver={() => setKey(appointment.key)} align="right">
+                                                            <Select
+                                                                style={{ color: "white" }}
+                                                                className="actionSelect"
+                                                                value={appointment.action}
+                                                                onChange={handleChange}
+                                                            >
+                                                                <MenuItem value={"notVisited"}>Not Visited</MenuItem>
+                                                                <MenuItem value={"visited"}>Visited</MenuItem>
+                                                            </Select>
+                                                        </TableCell>
+                                                    </TableRow>
+                                                ))
+                                            }
+                                        </TableBody>
+                                    </Table>
+                                </TableContainer>
                             </div>
-                            <TableContainer component={Paper}>
-                                <Table className={classes.table} aria-label="simple table">
-                                    <TableHead>
-                                        <TableRow>
-                                            <TableCell align="left">Name</TableCell>
-                                            <TableCell align="center">Schedule</TableCell>
-                                            <TableCell align="right">Action</TableCell>
-                                        </TableRow>
-                                    </TableHead>
-                                    <TableBody>
-                                        {
-                                            selectedDateAppointment.map((appointment) => (
-                                                <TableRow key={appointment._id}>
-                                                    <TableCell align="left">
-                                                        {appointment.details.name}
-                                                    </TableCell>
-                                                    <TableCell align="center">{appointment.details.time}</TableCell>
-                                                    <TableCell onClick={() => setKey(appointment.key)} align="right">
-                                                        <Select
-                                                            style={{ color: "white" }}
-                                                            className="actionSelect"
-                                                            value={appointment.action}
-                                                            onChange={handleChange}
-                                                        >
-                                                            <MenuItem value={"notVisited"}>Not Visited</MenuItem>
-                                                            <MenuItem value={"visited"}>Visited</MenuItem>
-                                                        </Select>
-                                                    </TableCell>
-                                                </TableRow>
-                                            ))
-                                        }
-                                    </TableBody>
-                                </Table>
-                            </TableContainer>
-                        </div> :
-                        <div style={{margin:"400px 200px"}} className="spinner-border text-success" role="status">
+                        </FullHeight> :
+                        <div style={{ margin: "400px 200px" }} className="spinner-border text-success" role="status">
                             <span className="sr-only">Loading...</span>
                         </div>
                 }

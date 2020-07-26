@@ -12,7 +12,7 @@ const AppointmentType = (props) => {
 
     const onSubmit = (data) => {
         const key = (length=6)=>Math.random().toString(20).substr(2, length);
-        const appointmentInfo = { title, key: key(), details: data, action: "notVisited"}
+        const appointmentInfo = { title, key: key(), details: data, action: "notVisited", action1: "pending"}
         console.log(appointmentInfo);
         fetch("https://guarded-anchorage-08361.herokuapp.com/addAppointment", {
             method: "post",
