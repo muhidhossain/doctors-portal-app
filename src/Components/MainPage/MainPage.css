@@ -70,10 +70,9 @@
 .doctorPortal .ourServices{
     display: flex;
     justify-content: center;
-}
-.doctorPortal .ourServices{
     text-align: center;
     margin-top: 60px;
+    width: 100%;
 }
 .doctorPortal .ourServices > div > p{
     font-size: 20px;
@@ -87,6 +86,8 @@
 }
 .doctorPortal .servicesDetails{
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .doctorPortal .servicesDetails > *{
     width: 400px;
@@ -101,16 +102,19 @@
 .doctorPortal .servicesDetails > * > p:nth-child(3){
     color: gray;
 }
-.doctorPortal .dentalCare{
+.doctorPortal .dentalCare > div{
     display: flex;
+    justify-content: center;
+    padding-right: 40px;
 }
 .doctorPortal .dentalCare img{
     height: 500px;
-    margin-left: 150px;
+    margin-left: 100px;
     margin-top: 60px;
+    margin-right: 40px;
 }
 .doctorPortal .dentalCare h1{
-    margin-top: 80px;
+    margin-top: 50px;
 }
 .doctorPortal .dentalCare p{
     font-size: 20px;
@@ -125,9 +129,16 @@
     color: white;
     background-position: bottom;
     background-repeat: no-repeat;
+    justify-content: center;
+    padding-right: 10%;
+}
+.doctorPortal .makeAppointment > div{
+    width: 100%;
 }
 .doctorPortal .makeAppointment img{
     height: 600px;
+    display: flex;
+    justify-content: flex-end;
 }
 .doctorPortal .makeAppointment h4{
     margin-top: 220px;
@@ -149,6 +160,8 @@
 }
 .testimonial .testimonialDetails{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .testimonial .testimonialDetails > *{
     margin: 30px;
@@ -187,6 +200,8 @@
 .ourBlog .ourBlogDetails,
 .ourDoctors .ourDoctorsDetails{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .ourBlog .ourBlogDetails > *,
 .ourDoctors .ourDoctorsDetails > *{
@@ -213,15 +228,18 @@
     background-size: 100%;
     color: white;
     padding: 60px 0;
+    background-size: 100% 100%;
 }
 .contactUs .contactUsDetails{
     display: flex;
     justify-content: center;
     text-align: center;
 }
+.contactUs .contactUsDetails input{
+    width: 800px;
+}
 .contactUs .contactUsDetails input:first-child,
 .contactUs .contactUsDetails input:nth-child(3){
-    width: 800px;
     padding: 20px;
     border-radius: 4px;
     outline: none;
@@ -229,7 +247,6 @@
     margin-top: 10px;
 }
 .contactUs .contactUsDetails input:nth-child(5){
-    width: 800px;
     padding: 20px;
     padding-bottom: 150px;
     border-radius: 4px;
@@ -245,4 +262,197 @@
     padding: 10px 50px;
     border-radius: 4px;
     outline: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    .doctorPortal .ourServices > div{
+        width: 100%;
+    }
+    .doctorPortal .dentalCare h1{
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .doctorPortal .dentalCare p{
+        font-size: 16px;
+    }
+    .doctorPortal .makeAppointment h1{
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1;
+    }
+    .doctorPortal .testimonial h4,
+    .doctorPortal .testimonial h1{
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .navLink{
+        padding: 0 15px;
+    }
+    .doctorText h1{
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .doctorText p{
+        font-size: 14px;
+    }
+    .doctorText .button,
+    .doctorPortal .dentalCare .button,
+    .doctorPortal .makeAppointment .button{
+        padding: 10px;
+        font-size: 12px;
+        font-weight: 800;
+    }
+    .doctorImg img{
+        width: 90%;
+        height: 80%;
+    }
+    .doctorPortal .makeAppointment img{
+        margin-left: -80px;
+    }
+    .doctorPortal .makeAppointment h1{
+        margin-bottom: 10px;
+    }
+    .doctorPortal .makeAppointment h4{
+        margin-top: 160px;
+        margin-bottom: 10px;
+    }
+    .doctorPortal .publicServices > *{
+        margin-top: 20px;
+        width: 250px;
+        height: 120px;
+        line-height: .8;
+    }
+    .doctorPortal .publicServices > * .icon{
+        font-size: 60px;
+        margin-right: 10px;
+    }
+    .doctorPortal .dentalCare img{
+        height: 400px;
+    }
+    .doctorPortal .dentalCare p{
+        font-size: 14px;
+    }
+    .contactUs .contactUsDetails input{
+        width: 600px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .doctorText h1{
+        font-size: 25px;
+    }
+    .doctorText p{
+        font-size: 14px;
+    }
+    .doctorImg img{
+        height: 310px;
+    }
+    .doctorPortal .dentalCare > div{
+        flex-wrap: wrap-reverse;
+        padding: 0 40px;
+    }
+    .doctorPortal .dentalCare img{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 771px) {
+    .doctorNav{
+        margin-right: 5px;
+        padding-top: 40px;
+    }
+    .navLink{
+        padding: 0 5px;
+        font-size: 12px;
+    }
+    .doctorText{
+        margin: 0 20px;
+    }
+    .doctorImg img{
+        padding-top: 10px;
+        padding-left: 40px;
+        height: 250px;
+        width: 400px;
+    }
+    .doctorPortal .publicServices > *{
+        margin-top: 50px;
+        width: 150px;
+        height: 50px;
+        line-height: .6;
+    }
+    .doctorPortal .publicServices > * .icon{
+        font-size: 20px;
+        margin-right: 5px;
+    }
+    .doctorPortal .publicServices > * p{
+        margin-bottom: 0px;
+        font-size: 10px;
+    }
+    .doctorPortal .publicServices > * small{
+        font-size: 8px;
+    }
+    .doctorPortal .dentalCare img{
+        height: 300px;
+    }
+    .doctorPortal .makeAppointment{
+        height: 350px;
+    }
+    .doctorPortal .makeAppointment img{
+        height: 350px;
+    }
+    .doctorPortal .makeAppointment h1{
+        margin-bottom: 0;
+    }
+    .doctorPortal .makeAppointment h4{
+        margin-top: 140px;
+        margin-bottom: 0;
+    }
+    .doctorPortal .makeAppointment p{
+        line-height: .8;
+        margin-bottom: 0;
+    }
+    .doctorPortal .makeAppointment > div:first-child{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-left: 10px;
+    }
+    .doctorPortal .makeAppointment > div:last-child{
+        margin-top: -45px;
+        margin-left: -60px;
+    }
+    .contactUs h1{
+        font-size: 30px;
+    }
+    .contactUs .contactUsDetails input{
+        width: 300px;
+    }
+    .contactUs .contactUsDetails input:first-child,
+    .contactUs .contactUsDetails input:nth-child(3){
+    padding: 10px;
+    }
+    .contactUs .contactUsDetails input:nth-child(5){
+    padding: 10px;
+    padding-bottom: 150px;
+    }
+    .doctorPortal .makeAppointment .button{
+        padding: 5px 10px;
+        margin-top: 4px;
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 411px) {
+    .navLink{
+        padding: 0 5px;
+        font-size: 10px;
+    }
+    .doctorImg img{
+        padding-left: 20px;
+        height: 150px;
+        width: 250px;
+        margin-top: 40px;
+    }
 }

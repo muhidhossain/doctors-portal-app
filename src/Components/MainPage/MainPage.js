@@ -46,8 +46,8 @@ const MainPage = () => {
                     <div className="col-md-5">
                         <div className="doctorText">
                             <h1>Your New Smile
-                        <br />
-                        Starts Here</h1>
+                            <br />
+                            Starts Here</h1>
                             <p>Oral health is a key indicator of overall health, well-being and quality of life. It encompasses a range of diseases and conditions that include dental caries, Periodontal disease, Tooth loss, Oral cancer, Oral manifestations of HIV infection, Oro-dental trauma, Noma and birth defects such as cleft lip and palate.</p>
                             <Link style={{ textDecoration: "none" }} to="/appointment">
                                 <Button className="button">GET APPOINTMENT</Button>
@@ -112,20 +112,24 @@ const MainPage = () => {
                 </div>
             </div>
             <div className="dentalCare">
-                <div className="col-md-5">
-                    <img src={maskGroup3} alt="" />
-                </div>
-                <div className="col-md-5">
-                    <h1>Exceptional Dental<br />Care, on Your Terms</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus vero dolor cumque officia natus quaerat a vitae. Dolorum, quae aperiam fugit corporis deleniti doloribus at excepturi. Aspernatur quia sint earum dolore eius voluptatem maiores laborum. Ipsam voluptates iusto laborum recusandae at optio, eum quas aliquam cumque maxime consequuntur, possimus sunt atque modi odit tempora? Quas enim sed qui ipsam consectetur laborum amet reprehenderit suscipit ab corporis. Velit unde dicta quia? Voluptas ad officia fugiat ducimus aperiam temporibus, quis omnis voluptatibus.</p>
-                    <Button className="button">Learn More</Button>
+                <div>
+                    <div>
+                        <img src={maskGroup3} alt="" />
+                    </div>
+                    <div>
+                        <div>
+                            <h1>Exceptional Dental<br />Care, on Your Terms</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus vero dolor cumque officia natus quaerat a vitae. Dolorum, quae aperiam fugit corporis deleniti doloribus at excepturi. Aspernatur quia sint earum dolore eius voluptatem maiores laborum. Ipsam voluptates iusto laborum recusandae at optio, eum quas aliquam cumque maxime consequuntur, possimus sunt atque modi odit tempora? Quas enim sed qui ipsam consectetur laborum amet reprehenderit suscipit ab corporis. Velit unde dicta quia? Voluptas ad officia fugiat ducimus aperiam temporibus, quis omnis voluptatibus.</p>
+                            <Button className="button">Learn More</Button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="makeAppointment">
-                <div className="col-md-5">
+                <div>
                     <img src={bgRemoveDoctor} alt="" />
                 </div>
-                <div className="col-md-6">
+                <div>
                     <h4>APPOINTMENT</h4>
                     <h1>Make an Appointment <br />Today</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui doloremque dolore ipsa dolorem exercitationem culpa in inventore asperiores nostrum tenetur.</p>
