@@ -7,7 +7,7 @@
     background-size: cover;
 }
 .appointmentText{
-    margin-left: 150px;
+    margin-left: 100px;
     font-weight: 700;
 }
 .appointmentText h1{
@@ -15,6 +15,7 @@
 }
 .mainBody{
     margin-top: 80px;
+    display: flex;
 }
 .appointmentText .calender{
     background-color: white;
@@ -25,6 +26,9 @@
     font-size: 18px;
     border: none;
 }
+.mainBody .doctorImg{
+    width: auto;
+}
 .appointmentDetails{
     padding-top: 50px;
     text-align: center;
@@ -34,4 +38,49 @@
     background: -webkit-linear-gradient(45deg, #19D3AE, #0FCFEC);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+@media only screen and (max-width: 1200px) {
+    .appointmentText .calender{
+        height: 400px;
+        width: 400px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .appointmentText .calender{
+        height: 320px;
+        width: 320px;
+        line-height: .8;
+        padding-top: 0;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .appointmentText .calender{
+        height: 300px;
+        width: 300px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 771px) {
+    .mainBody{
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+    .appointmentText .calender{
+        margin-right: 100px;
+    }
+    .appointmentDetails h3{
+        font-size: 18px;
+    }
+    .mainBody .doctorImg{
+        margin-right: 40px;
+    }
+    .mainBody{
+        margin-top: 40px;
+    }
 }

@@ -41,3 +41,25 @@
     color: gray;
     font-weight: 600;
 }
+
+@media only screen and (max-width: 771px) {
+    .footer{
+        padding-left: 20px;
+    }
+    .footer .brandIcon > *{
+        margin-right: 5px;
+        height: 20px;
+        width: 20px;
+    }
+    .footer .callNow{
+        width: 100px;
+        padding: 5px 5px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 441px) {
+    .footer small{
+        font-size: 10px;
+    }
+}

@@ -43,8 +43,8 @@ const Appointment = () => {
                         </Nav.Item>
                     </Nav>
                 </div>
-                <div className='row mainBody'>
-                    <div className="col-md-5">
+                <div className='mainBody'>
+                    <div>
                         <div className="appointmentText">
                             <h1>Appointment</h1>
                             <div>
@@ -58,7 +58,7 @@ const Appointment = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-7">
+                    <div>
                         <div className="doctorImg">
                             <img src={image} alt="" />
                         </div>
