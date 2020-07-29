@@ -8,7 +8,7 @@ import FullHeight from "react-full-height";
 
 const useStyles = makeStyles({
     table: {
-        maxWidth: 1100,
+        maxWidth: 1300,
     },
 });
 
@@ -94,47 +94,49 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             <div className="dashboardTableDetails">
-                                <p>Recent Appointments</p>
-                                <TableContainer component={Paper}>
-                                    <Table className={classes.table} aria-label="simple table">
-                                        <TableHead>
-                                            <TableRow>
-                                                <TableCell align="left">Sr. No</TableCell>
-                                                <TableCell align="center">Date</TableCell>
-                                                <TableCell align="center">Time</TableCell>
-                                                <TableCell align="left">Name</TableCell>
-                                                <TableCell align="center">Contact</TableCell>
-                                                <TableCell align="center">Prescription</TableCell>
-                                                <TableCell align="center">Action</TableCell>
-                                            </TableRow>
-                                        </TableHead>
-                                        <TableBody>
-                                            {
-                                                appointment.map((appoint) => (
-                                                    <TableRow key={appoint._id}>
-                                                        <TableCell align="left">{appointment.indexOf(appoint) + 1}</TableCell>
-                                                        <TableCell align="center">{appoint.details.date}</TableCell>
-                                                        <TableCell align="center">{appoint.details.time}</TableCell>
-                                                        <TableCell align="left">{appoint.details.name}</TableCell>
-                                                        <TableCell align="center">{appoint.details.phoneNumber}</TableCell>
-                                                        <TableCell align="center">Not Added</TableCell>
-                                                        <TableCell onMouseOver={() => setKey(appoint.key)} align="center">
-                                                            <Select
-                                                                style={{ color: "white" }}
-                                                                className="actionSelect"
-                                                                value={appoint.action1}
-                                                                onChange={handleChange}
-                                                            >
-                                                                <MenuItem value={"pending"}>Pending</MenuItem>
-                                                                <MenuItem value={"approved"}>Approved</MenuItem>
-                                                            </Select>
-                                                        </TableCell>
-                                                    </TableRow>
-                                                ))
-                                            }
-                                        </TableBody>
-                                    </Table>
-                                </TableContainer>
+                                <div>
+                                    <p>Recent Appointments</p>
+                                    <TableContainer component={Paper}>
+                                        <Table className={classes.table} aria-label="simple table">
+                                            <TableHead>
+                                                <TableRow>
+                                                    <TableCell align="left">Sr. No</TableCell>
+                                                    <TableCell align="center">Date</TableCell>
+                                                    <TableCell align="center">Time</TableCell>
+                                                    <TableCell align="left">Name</TableCell>
+                                                    <TableCell align="center">Contact</TableCell>
+                                                    <TableCell align="center">Prescription</TableCell>
+                                                    <TableCell align="center">Action</TableCell>
+                                                </TableRow>
+                                            </TableHead>
+                                            <TableBody>
+                                                {
+                                                    appointment.map((appoint) => (
+                                                        <TableRow key={appoint._id}>
+                                                            <TableCell align="left">{appointment.indexOf(appoint) + 1}</TableCell>
+                                                            <TableCell align="center">{appoint.details.date}</TableCell>
+                                                            <TableCell align="center">{appoint.details.time}</TableCell>
+                                                            <TableCell align="left">{appoint.details.name}</TableCell>
+                                                            <TableCell align="center">{appoint.details.phoneNumber}</TableCell>
+                                                            <TableCell align="center">Not Added</TableCell>
+                                                            <TableCell onMouseOver={() => setKey(appoint.key)} align="center">
+                                                                <Select
+                                                                    style={{ color: "white" }}
+                                                                    className="actionSelect"
+                                                                    value={appoint.action1}
+                                                                    onChange={handleChange}
+                                                                >
+                                                                    <MenuItem value={"pending"}>Pending</MenuItem>
+                                                                    <MenuItem value={"approved"}>Approved</MenuItem>
+                                                                </Select>
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    ))
+                                                }
+                                            </TableBody>
+                                        </Table>
+                                    </TableContainer>
+                                </div>
                             </div>
                         </div>
                     </FullHeight> :

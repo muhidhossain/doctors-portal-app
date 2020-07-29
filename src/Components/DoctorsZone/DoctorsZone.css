@@ -4,7 +4,8 @@
 }
 .zoneAppointment{
     display: flex;
-    margin-left: 240px;
+    margin-left: 280px;
+    flex-wrap: wrap;
 }
 .zoneAppointment h4{
     padding-top: 20px;
@@ -51,3 +52,12 @@
     padding: 0px 5px;
     border-radius: 4px;
 }
+
+/* @media only screen and (max-width: 1350px) {
+    .zoneAppointment .calender{
+        width: 400px;
+        height: 400px;
+        font-size: 16px;
+        padding-top: 20px;
+    }
+} */

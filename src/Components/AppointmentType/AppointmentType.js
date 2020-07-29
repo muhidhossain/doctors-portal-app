@@ -35,7 +35,7 @@ const AppointmentType = (props) => {
                     <h5>{title}</h5>
                     <p className="mb-2 text-muted">{time}</p>
                     <p><small>{shortDetails}</small></p>
-                    <Popup trigger={<button>BOOK APPOINTMENT</button>} contentStyle={{ width: "700px", borderRadius: "20px" }} modal closeOnDocumentClick>
+                    <Popup trigger={<button>BOOK APPOINTMENT</button>} contentStyle={{ width: "600px", border: "none", background: "transparent" }} modal closeOnDocumentClick>
                         <div className="popupDetails">
                             <h5>{title}</h5>
                             <form onSubmit={handleSubmit(onSubmit)}>

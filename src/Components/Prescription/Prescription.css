@@ -8,12 +8,14 @@
 .prescriptionTable h4{
     margin-top: 20px;
     margin-left: 40px;
+    width: 1300px;
 }
 .prescriptionTableDetails{
     background-color: white;
     margin-top: 60px;
     margin-left: 40px;
     border-radius: 5px;
+    margin-right: 40px;
 }
 .prescriptionTableDetails p{
     padding: 20px;

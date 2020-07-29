@@ -27,7 +27,12 @@
     border-radius: 2px;
 }
 .popupDetails{
+    margin: auto;
     padding: 40px;
+    background-color: white;
+    border-radius: 20px;
+    width: 700px;
+    position: relative;
 }
 .popupDetails h5{
     margin-bottom: 30px;
@@ -62,5 +67,26 @@
     .appointmentType button{
         font-size: 14px;
         padding: 8px 10px;
+    }
+}
+
+@media only screen and (max-width: 771px) {
+    .popupDetails{
+        width: 400px;
+        background-color: white;
+        border-radius: 20px;
+    }
+    .popupDetails .takeInput{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 441px) {
+    .popupDetails{
+        width: 300px;
+        margin: 30px;
+    }
+    .popupDetails .takeInput{
+        width: 200px;
     }
 }

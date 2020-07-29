@@ -8,7 +8,7 @@ import FullHeight from "react-full-height";
 
 const useStyle = makeStyles({
     table: {
-        minWidth: 1200,
+        maxWidth: 1100,
     }
 });
 
